@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+        <title>software innovation contest</title>
+        <link rel ="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    </head>
+    <body>
+        <header id="myHeader">
+            <a href="https://cntt.dlu.edu.vn/" class="brand" ><img src="logo.png" width="300" alt="logo_khoa_CNTT"></a>
+           <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Purpose</a> 
+                    <a href="">Applicable object</a>
+                    <a href="">Registration rules</a>
+                    <a href="">Time and prize</a>
+                    <a href="">Application form</a>
+                </div>
+            </div>
+        </header>
+        <section class="home">
+            <video class="video-slides active" src="one.mp4" autoplay muted loop></video>
+            <video class="video-slides" src="five.mp4" autoplay muted loop></video>
+            <video class="video-slides" src="three.mp4" autoplay muted loop></video>
+            <video class="video-slides" src="four.mp4" autoplay muted loop></video>
+            <video class="video-slides" src="two.mp4" autoplay muted loop></video>
+            <div class="content active">
+                <h1>competition<br><span>software creation</span></h1>
+                <p>
+                </p>
+                <a href="#">Đăng Ký !</a>
+            </div>
+            <div class="content">
+                <h1>Applicable<br><span>object</span></h1>
+                <p>
+                </p>
+                <a href="#">Đăng Ký !</a>
+            </div>
+            <div class="content">
+                <h1>Registration<br><span>rules</span></h1>
+                <p>
+                </p>
+                <a href="#">Đăng Ký !</a>
+            </div>
+            <div class="content">
+                <h1>time and<br><span>prize</span></h1>
+                <p>
+                </p>
+                <a href="#">Đăng Ký !</a>
+            </div>
+            <div class="content">
+                <h1>application<br><span>form</span></h1>
+                <p>
+                </p>
+                <a href="#">Đăng Ký !</a>
+            </div>
+            <div class="media-icons">
+                <a href="https://www.facebook.com/InformationTechnologyDLU"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            // javascript of responsive navigation menu
+            const menuBtn = document.querySelector(".menu-btn");
+            const navigation = document.querySelector(".navigation");
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            });
+
+            // javascript for video slider navigation
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slides");
+            const contents = document.querySelectorAll(".content");
+
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+        </script>
+        <script>
+            // When the user scrolls the page, execute myFunction
+                window.onscroll = function() {myFunction()};
+
+                // Get the header
+                var header = document.getElementById("myHeader");
+
+                // Get the offset position of the navbar
+                var sticky = header.offsetTop;
+
+                // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+                function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+                }
+        
+        </script>
+    </body>
+</html>
